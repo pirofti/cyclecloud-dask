@@ -50,7 +50,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init cyclecloud/dask:execute:1.0.2]]]
+        [[[cluster-init cyclecloud/dask:execute:1.0.0]]]
 
         [[[network-interface eth0]]]
         AssociatePublicIpAddress = $ExecuteNodesPublic
@@ -64,7 +64,7 @@ Order = 1
         [[[parameter dask]]]
         HideLabel = true
         Config.Plugin = pico.widget.HtmlTemplateWidget
-        Config.Template := "<table><tr><td><img src='https://raw.githubusercontent.com/dask/dask/105649e2fdb36981529c9f267630e48ed8e88ff2/docs/source/images/dask_icon.svg' width='192' height='192'></td></tr><tr><td><p>Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love. See the <a href=\"https://dask.org/\" target=\"_blank\">dask project site</a> for an overview.</p><p>Follow the instructions in the <a href=\"https://github.com/pirofti/cyclecloud-dask/\" target=\"_blank\">README</a> for details on instructions on extending and configuring the Project for your environment.</p></td></tr></table>"
+        Config.Template := "<table><tr><td><img src='https://dask.org/_images/dask_icon_no_pad.svg' width='192' height='192'></td></tr><tr><td><p>Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love. See the <a href=\"https://dask.org/\" target=\"_blank\">dask project site</a> for an overview.</p><p>Follow the instructions in the <a href=\"https://github.com/pirofti/cyclecloud-dask/\" target=\"_blank\">README</a> for details on instructions on extending and configuring the Project for your environment.</p></td></tr></table>"
 
 [parameters Required Settings]
 Order = 10
@@ -145,7 +145,7 @@ Order = 20
 required = True
 label = Dask Version
 description = Version of Dask to install on the cluster
-defaultvalue = 1.2.2
+defaultvalue = 1.0.0
 
 
     [[parameters Software]]
