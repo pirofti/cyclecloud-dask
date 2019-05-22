@@ -1,7 +1,7 @@
 # Description
 
-The `cyclecloud-dask` project provides a cluster application for (cyclecloud)[] 
-that installs and configures (dask)[https://dask.org/] on the master and execution nodes.
+The `cyclecloud-dask` project provides a cluster application for [cyclecloud](https://azure.microsoft.com/en-us/features/azure-cyclecloud/) 
+that installs and configures [dask](https://dask.org/) on the master and execution nodes.
 
 # Installation
 
