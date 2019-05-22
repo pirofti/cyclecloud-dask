@@ -1,11 +1,11 @@
-
 ################################
-## Cluster Configuration File ##
+### DASK CycleCloud Template ###
 ################################
-
-[cluster dask]
+[cluster DASK]
 FormLayout = selectionpanel
+IconUrl = http://docs.dask.org/en/latest/_images/dask_stacked.svg
 Category = Schedulers
+
 
 Autoscale = $Autoscale
 
@@ -18,9 +18,8 @@ Autoscale = $Autoscale
     KeyPairLocation = ~/.ssh/cyclecloud.pem
     
         [[[configuration]]]
-        dask.version = $configuration_dask_version
 
-        [[[cluster-init cyclecloud/dask:default:1.0.0]]]
+        [[[cluster-init dask:default]]]
         Optional = true
 
     [[node master]]
@@ -30,7 +29,7 @@ Autoscale = $Autoscale
     
         [[[configuration]]]
 
-        [[[cluster-init cyclecloud/dask:master:1.0.0]]]
+        [[[cluster-init dask:master]]]
 
         [[[network-interface eth0]]]
         AssociatePublicIpAddress = $UsePublicNetwork
@@ -39,6 +38,14 @@ Autoscale = $Autoscale
         PrivatePort = 8652
         PublicPort = 8652
 
+        [[[volume shared]]]
+        size=2000
+        persistent=true
+        mount = shared
+        SSD = True
+
+        [[[configuration cyclecloud.mounts.shared]]]
+        mountpoint = /mnt/exports/shared
 
     [[nodearray execute]]
     MachineType = $ExecuteMachineType
@@ -50,7 +57,7 @@ Autoscale = $Autoscale
 
         [[[configuration]]]
 
-        [[[cluster-init cyclecloud/dask:execute:1.0.0]]]
+        [[[cluster-init dask:execute]]]
 
         [[[network-interface eth0]]]
         AssociatePublicIpAddress = $ExecuteNodesPublic
@@ -140,13 +147,6 @@ Order = 20
     [[parameters Dask Settings ]]
     Description = "Section for configuring Dask"
     Order = 5
-
-        [[[parameter configuration_dask_version]]]
-required = True
-label = Dask Version
-description = Version of Dask to install on the cluster
-defaultvalue = 1.0.0
-
 
     [[parameters Software]]
     Description = "Specify the scheduling software, and base OS installed on all nodes, and optionally the cluster-init and chef versions from your Locker."
