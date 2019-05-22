@@ -8,8 +8,12 @@ PY_PACKAGES=dask
 # Azure VMs that have ephemeral storage have that mounted at /mnt/resource. If that does not exist this command will create it.
 mkdir -p /mnt/resource/apps
 
-# Check for pip and install it
-which pip > /dev/null 2>&1 || yum -y install python-pip
+# Make sure pip is installed
+yum -y install python-pip
 
 # Install python packages
+
+# make sure we install on the system not inside the jetpack environment
+export PATH=/usr/bin:${PATH}
+
 pip install ${PY_PACKAGES}
