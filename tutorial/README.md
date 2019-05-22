@@ -112,33 +112,32 @@ The key places to be careful about are
 
 * definition
 
-     [cluster DASK]
-     FormLayout = selectionpanel
-     IconUrl = http://docs.dask.org/en/latest/_images/dask_stacked.svg
-     Category = Schedulers
+      [cluster DASK]
+      FormLayout = selectionpanel
+      IconUrl = http://docs.dask.org/en/latest/_images/dask_stacked.svg
+      Category = Schedulers
 
 * path to default, master, and execute initialziation
 
-    [[node defaults]]
-      [[[cluster-init dask:default]]]`
-      ...
-    [[node master]]
-      [[[cluster-init dask:default]]]
-      ...
-
-    [[nodearray execute]]
-      [[[cluster-init dask:execute]]]
-
+      [[node defaults]]
+        [[[cluster-init dask:default]]]`
+        ...
+      [[node master]]
+        [[[cluster-init dask:default]]]
+        ...
+       
+      [[nodearray execute]]
+        [[[cluster-init dask:execute]]]
 
 * about
 
-    [parameters About]
-      Order = 1
-      [[parameters About Dask]]
-        [[[parameter dask]]]
-        HideLabel = true
-        Config.Plugin = pico.widget.HtmlTemplateWidget
-        Config.Template := "<table><tr><td><img src='...' width='192' height='192'></td></tr><tr><td><p>Description.</p></td></tr></table>"
+      [parameters About]
+        Order = 1
+        [[parameters About Dask]]
+          [[[parameter dask]]]
+          HideLabel = true
+          Config.Plugin = pico.widget.HtmlTemplateWidget
+          Config.Template := "<table><tr><td><img src='...' width='192' height='192'></td></tr><tr><td><p>Description.</p></td></tr></table>"
 
 ## Importing and Deleting the Template
 
