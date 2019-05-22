@@ -16,7 +16,7 @@ Then you are ready to install it:
 
 Which should make it available in the clusters list.
 
-![cyclecloud-dask][tutorial/cyclecloud-dask.png]
+![cyclecloud-dask](tutorial/cyclecloud-dask.png)
 
 
 If you want to remove it from the GUI execute:
